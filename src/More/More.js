@@ -8,8 +8,13 @@ import {
     StyleSheet,
     Text,
     View,
-    Image
+    Image,
+    ScrollView
 } from 'react-native';
+
+import {StackNavigator} from 'react-navigation';
+import {CommonCell} from "./CommonCell";
+
 
 class More extends Component {
     static navigationOptions = {
@@ -20,13 +25,60 @@ class More extends Component {
                 style={[styles.icon, {tintColor: tintColor}]}
             />
         ),
+        title:'更多',
+        headerTintColor:'#FFF',
+        headerTitleStyle:{
+            backgroundColor:'red',
+        }
     }
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    More
-                </Text>
+                <ScrollView>
+                    <View style={{marginTop:20}}>
+                        <CommonCell title="扫-扫"/>
+                    </View>
+                    <View style={{marginTop:20}}>
+                        <CommonCell
+                            title="省流量模式"
+                            isSwitch={true}
+                        />
+                        <CommonCell
+                            title="消息提醒"
+                        />
+                        <CommonCell
+                            title="邀请好友使用码团"
+                        />
+                        <CommonCell
+                            title="清空缓存"
+                            rightTitle="1.99M"
+                        />
+                    </View>
+
+                    <View style={{marginTop:20}}>
+                        <CommonCell
+                            title="问卷调查"
+                        />
+                        <CommonCell
+                            title="支付帮助"
+                        />
+                        <CommonCell
+                            title="网络诊断"
+                        />
+                        <CommonCell
+                            title="关于码团"
+                        />
+                        <CommonCell
+                            title="我要应聘"
+                        />
+                    </View>
+
+                    <View style={{marginTop:20}}>
+                        <CommonCell
+                            title="精品应用"
+                        />
+                    </View>
+                </ScrollView>
 
             </View>
         );
@@ -36,8 +88,6 @@ class More extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: '#F5FCFF',
     },
     icon: {
@@ -46,5 +96,8 @@ const styles = StyleSheet.create({
     },
 });
 
-// 输出组件类
-module.exports = More;
+export const moreNavigator = StackNavigator({
+    More:{
+        screen:More,
+    }
+});

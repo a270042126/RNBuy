@@ -4,12 +4,13 @@
 
 import React, { Component } from 'react';
 import {
-    AppRegistry,
     StyleSheet,
     Text,
     View,
     Image
 } from 'react-native';
+
+import {StackNavigator} from 'react-navigation';
 
 class Shop extends Component {
     static navigationOptions = {
@@ -46,5 +47,8 @@ const styles = StyleSheet.create({
     },
 });
 
-// 输出组件类
-module.exports = Shop;
+export const shopNavigator = StackNavigator({
+    Shop:{
+        screen:Shop,
+    }
+});

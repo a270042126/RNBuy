@@ -10,6 +10,7 @@ import {
     View,
     Image
 } from 'react-native';
+import {StackNavigator} from 'react-navigation';
 
 class Mine extends Component {
     static navigationOptions = {
@@ -45,6 +46,8 @@ const styles = StyleSheet.create({
         height: 26,
     },
 });
-
-// 输出组件类
-module.exports = Mine;
+export const mineNavigator = StackNavigator({
+    Mine:{
+        screen:Mine,
+    }
+});

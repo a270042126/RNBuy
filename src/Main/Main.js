@@ -15,12 +15,9 @@ import {
 
 
 import {homeNavigator} from '../Home/Home';
-const Shop = require('../Shop/Shop');
-const Mine = require('../Mine/Mine');
-const More = require('../More/More');
-
-
-
+import {shopNavigator} from '../Shop/Shop';
+import {mineNavigator} from '../Mine/Mine';
+import {moreNavigator} from '../More/More';
 
 
 const TabNav = TabNavigator({
@@ -28,13 +25,13 @@ const TabNav = TabNavigator({
         screen:homeNavigator,
     },
     Shop:{
-        screen:Shop,
+        screen:shopNavigator,
     },
     Mine:{
-        screen:Mine,
+        screen:mineNavigator,
     },
     More:{
-        screen:More,
+        screen:moreNavigator,
     }
 },{
 
