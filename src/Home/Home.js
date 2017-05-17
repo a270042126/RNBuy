@@ -4,13 +4,22 @@
 
 import React, { Component } from 'react';
 import {
-    AppRegistry,
     StyleSheet,
     Text,
-    View
+    View,
+    Image
 } from 'react-native';
 
+import {StackNavigator} from  'react-navigation';
+
+export const homeNavigator = StackNavigator({
+    Home:{
+        screen:Home,
+    }
+});
+
 class Home extends Component {
+
     render() {
         return (
             <View style={styles.container}>
@@ -30,17 +39,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
     },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
+    icon: {
+        width: 26,
+        height: 26,
     },
 });
 
-// 输出组件类
-module.exports = Home;

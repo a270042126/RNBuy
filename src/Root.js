@@ -6,7 +6,6 @@
 
 import React,{Component} from 'react';
 
-
 const LaunchImage = require('./Main/LaunchImage');
 const Main = require('./Main/Main');
 

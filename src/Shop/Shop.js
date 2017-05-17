@@ -7,10 +7,20 @@ import {
     AppRegistry,
     StyleSheet,
     Text,
-    View
+    View,
+    Image
 } from 'react-native';
 
 class Shop extends Component {
+    static navigationOptions = {
+        tabBarLabel: '商家',
+        tabBarIcon: ({ tintColor }) => (
+            <Image
+                source={require('../images/icon_tabbar_merchant_normal.png')}
+                style={[styles.icon, {tintColor: tintColor}]}
+            />
+        ),
+    }
     render() {
         return (
             <View style={styles.container}>
@@ -30,15 +40,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
     },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
+    icon: {
+        width: 26,
+        height: 26,
     },
 });
 
