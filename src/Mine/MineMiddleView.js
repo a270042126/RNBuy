@@ -12,6 +12,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 
+
 const MiddleData = require('./MiddleData.json');
 
 export class MineMiddleView extends Component{
@@ -32,7 +33,7 @@ export class MineMiddleView extends Component{
             let data = MiddleData[i];
             // 创建组件装入数组
             itemArr.push(
-                <InnerView key={i} iconName={require('../images/' + data.iconName)} title={data.title}/>
+                <InnerView key={i} iconName={'../images/'+data.iconName} title={data.title}/>
             );
         }
         // 返回
@@ -45,7 +46,7 @@ class InnerView extends Component{
         return(
             <TouchableOpacity activeOpacity={0.5} onPress={()=>{alert('0')}}>
                 <View style={styles.innerViewStyle}>
-                    <Image source={this.props.iconName} style={{width:40, height:30, marginBottom:3}}/>
+                    <Image source={require('../images/order1.png')} style={{width:40, height:30, marginBottom:3}}/>
                     <Text style={{color:'gray'}}>{this.props.title}</Text>
                 </View>
             </TouchableOpacity>

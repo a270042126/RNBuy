@@ -12,8 +12,12 @@ import {
     Text,
     StyleSheet
 } from 'react-native';
+import {TopListView} from './TopListView';
+// 引入外部的json数据
+let TopMenu = require('../LocalData/TopMenu.json');
 
 let {width} = Dimensions.get('window');
+
 
 export class TopView extends Component{
 
@@ -46,12 +50,13 @@ export class TopView extends Component{
 
     renderScrollItem(){
         let itemArr = [];
-        let colorArr = ['red', 'green'];
-        for(let i = 0; i < colorArr.length; i++){
+        // 颜色数组 ---> 数据数组
+        let dataArr = TopMenu.data;
+        for(let i = 0; i < dataArr.length; i++){
             itemArr.push(
-                <View key={i} style={{backgroundColor:colorArr[i], width:width,height:120}}>
-                    <Text>{i}</Text>
-                </View>
+                <TopListView key={i}
+                             dataArr={dataArr[i]}
+                />
             );
         }
 
