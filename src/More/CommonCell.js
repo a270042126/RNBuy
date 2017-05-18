@@ -18,7 +18,7 @@ export class CommonCell extends Component{
 
 
     constructor(props){
-        super(props)
+        super(props);
         this.state ={
             isOn:false
         }

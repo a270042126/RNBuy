@@ -17,7 +17,9 @@ import {
 } from 'react-native';
 
 import {StackNavigator} from  'react-navigation';
-var {width, height} = Dimensions.get('window');
+let {width, height} = Dimensions.get('window');
+
+import {TopView} from './TopView';
 
 class Home extends Component {
     static navigationOptions = {
@@ -35,7 +37,9 @@ class Home extends Component {
         return (
             <View style={styles.container}>
                 {this.renderNavBar()}
-
+                <ScrollView>
+                    <TopView/>
+                </ScrollView>
             </View>
         );
     }
