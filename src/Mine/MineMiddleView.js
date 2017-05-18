@@ -32,7 +32,7 @@ export class MineMiddleView extends Component{
             let data = MiddleData[i];
             // 创建组件装入数组
             itemArr.push(
-                <InnerView key={i} iconName={require('../images/order1.png')} title={data.title}/>
+                <InnerView key={i} iconName={require('../images/' + data.iconName)} title={data.title}/>
             );
         }
         // 返回

@@ -22,6 +22,7 @@ export class TopView extends Component{
         this.state ={
             activePage: 0
         }
+        this.onScrollAnimationEnd = this.onScrollAnimationEnd.bind(this);
     }
 
     render(){
